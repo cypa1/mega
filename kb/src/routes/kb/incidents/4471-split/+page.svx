@@ -34,6 +34,11 @@ are a second problem. They need their own ticket.
   booking-v3 tenants: `alder.physio`, `copper.studio`, `pale.harbour`. The fix is the hint or
   the form, not the shared parser.
 
+## Resolution (desk update, #4471 closed 05 Oct)
+
+- **`parser` — fixed.** `fix(dates): parse dd/mm for eu locales` on the shared parser.
+- **`hint` — won't fix.** The booking-v3 form was retired.
+
 ## Reports the desk read differently
 
 `desk-notes.json` flags 5 reports the desk read as one-day moves, not month flips. By tenant

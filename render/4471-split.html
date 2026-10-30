@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../_app/immutable/entry/start.DfA7Uaoa.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.BN0Gp2o3.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CRcspTbo.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/BviwEzRQ.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BpSolJod.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D3s-tUuN.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.sOfH24lF.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.Cfd6Z42b.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/x-Z7bFtw.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CYIXcEhq.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Bve9mMNQ.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/xhiOYC88.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.B4l5vLWN.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/_amNOql9.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/6.CrDPxVmW.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/kpGaJBaq.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/6.DRhnGt9m.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BgHNejmx.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DLDRj6ak.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CUrF2orn.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CcfOalV3.js" rel="modulepreload">
@@ -35,22 +35,22 @@ reports come out with the month and day swapped. One shared fix covers them all.
 form reads the value <code>DD/MM/YYYY</code>. People type what the hint tells them, and the form reads
 the other order, so the date flips the other way. Only form reports from the three
 booking-v3 tenants: <code>alder.physio</code>, <code>copper.studio</code>, <code>pale.harbour</code>. The fix is the hint or
-the form, not the shared parser.</li></ul> <h2>Reports the desk read differently</h2> <p><code>desk-notes.json</code> flags 5 reports the desk read as one-day moves, not month flips. By tenant
+the form, not the shared parser.</li></ul> <h2>Resolution (desk update, #4471 closed 05 Oct)</h2> <ul><li><strong><code>parser</code> — fixed.</strong> <code>fix(dates): parse dd/mm for eu locales</code> on the shared parser.</li> <li><strong><code>hint</code> — won’t fix.</strong> The booking-v3 form was retired.</li></ul> <h2>Reports the desk read differently</h2> <p><code>desk-notes.json</code> flags 5 reports the desk read as one-day moves, not month flips. By tenant
 they sit inside <code>parser</code>, and the table above counts them there. They describe a day shift
 (11 vs 12 May; “only June”; Lisbon vs Toronto), so the desk should keep watching them as a
 possible separate problem, but they are not the shared parser bug.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-RNBF-GY3M</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_173a4hl = {
+					__sveltekit_1co06wr = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.DfA7Uaoa.js"),
-						import("../../_app/immutable/entry/app.sOfH24lF.js")
+						import("../../_app/immutable/entry/start.BN0Gp2o3.js"),
+						import("../../_app/immutable/entry/app.Cfd6Z42b.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],

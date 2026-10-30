@@ -17,6 +17,10 @@ One GitHub issue per problem, each with the number of reports it covers:
 379 + 33 = 412. The 5 reports in `desk-notes.json` that the desk read as "one-day moves" are
 counted inside `parser` here, exactly as the desk filed them.
 
+**Desk update:** #4471 is closed 05 Oct. `parser` is fixed (`fix(dates): parse dd/mm for eu
+locales`); `hint` won't fix, because the booking-v3 form was retired. Both tickets are closed
+to match.
+
 ## The page
 
 `kb/src/routes/kb/incidents/4471-split/+page.svx` is the page added to the kb. It is signed:
