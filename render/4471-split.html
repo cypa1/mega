@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_app/immutable/entry/start.DfA7Uaoa.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CRcspTbo.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BviwEzRQ.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D3s-tUuN.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.sOfH24lF.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/x-Z7bFtw.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CYIXcEhq.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Bve9mMNQ.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/xhiOYC88.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.B4l5vLWN.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/_amNOql9.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/6.CrDPxVmW.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/kpGaJBaq.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DLDRj6ak.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CUrF2orn.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CcfOalV3.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DZsVALuY.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>#4471 holds two problems, not one · support kb</title>
+		<link href="../../_app/immutable/assets/runbook.BhhgOc_n.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/Callout.yLErXQDM.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/CauseTable.DuKfINX_.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/6.CMZ6TBbc.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 holds two problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>support desk</b></span> <span class="status accepted svelte-e2jw2j">accepted</span> <span class="svelte-e2jw2j">reviewed 2026-10-30 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>Since April the desk merged <strong>412 reports</strong> into #4471 and called it one issue. The merged
+data holds <strong>two different bugs</strong> with two different fixes, and the second is not a duplicate.</p> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <aside class="warn svelte-17bri61"><!---->`hint` is not a duplicate of `parser`. 33 reports from booking-v3 tenants, form channel only,
+are a second problem. They need their own ticket.<!----></aside><!----> <h2>The two problems</h2> <ul><li><strong><code>parser</code> — 379 reports.</strong> The shared parser reads every date month first, while our
+tenants write the day first. Every tenant on file is day-first, so their app and email
+reports come out with the month and day swapped. One shared fix covers them all.</li> <li><strong><code>hint</code> — 33 reports.</strong> <code>booking-v3</code> prints <code>MM/DD/YYYY</code> under its date field while the
+form reads the value <code>DD/MM/YYYY</code>. People type what the hint tells them, and the form reads
+the other order, so the date flips the other way. Only form reports from the three
+booking-v3 tenants: <code>alder.physio</code>, <code>copper.studio</code>, <code>pale.harbour</code>. The fix is the hint or
+the form, not the shared parser.</li></ul> <h2>Reports the desk read differently</h2> <p><code>desk-notes.json</code> flags 5 reports the desk read as one-day moves, not month flips. By tenant
+they sit inside <code>parser</code>, and the table above counts them there. They describe a day shift
+(11 vs 12 May; “only June”; Lisbon vs Toronto), so the desk should keep watching them as a
+possible separate problem, but they are not the shared parser bug.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-RNBF-GY3M</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_173a4hl = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.DfA7Uaoa.js"),
+						import("../../_app/immutable/entry/app.sOfH24lF.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+---
+layout: runbook
+title: '#4471 holds two problems, not one'
+owner: support desk
+status: accepted
+reviewed: 2026-10-30
+signature: v1.eyJzdWIiOiIxOTM5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzODc0MjksImV4cCI6MTc5MzQ3MzgyOX0.FNLgtQ-2la6Do6JM_uULvYnvsP-dUVAMg_QvyGk2J_8
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+Since April the desk merged **412 reports** into #4471 and called it one issue. The merged
+data holds **two different bugs** with two different fixes, and the second is not a duplicate.
+
+<CauseTable ticket={4471} />
+
+<Callout kind="warn">
+`hint` is not a duplicate of `parser`. 33 reports from booking-v3 tenants, form channel only,
+are a second problem. They need their own ticket.
+</Callout>
+
+## The two problems
+
+- **`parser` — 379 reports.** The shared parser reads every date month first, while our
+  tenants write the day first. Every tenant on file is day-first, so their app and email
+  reports come out with the month and day swapped. One shared fix covers them all.
+- **`hint` — 33 reports.** `booking-v3` prints `MM/DD/YYYY` under its date field while the
+  form reads the value `DD/MM/YYYY`. People type what the hint tells them, and the form reads
+  the other order, so the date flips the other way. Only form reports from the three
+  booking-v3 tenants: `alder.physio`, `copper.studio`, `pale.harbour`. The fix is the hint or
+  the form, not the shared parser.
+
+## Reports the desk read differently
+
+`desk-notes.json` flags 5 reports the desk read as one-day moves, not month flips. By tenant
+they sit inside `parser`, and the table above counts them there. They describe a day shift
+(11 vs 12 May; "only June"; Lisbon vs Toronto), so the desk should keep watching them as a
+possible separate problem, but they are not the shared parser bug.
+
+<RenderStamp {signature} />
